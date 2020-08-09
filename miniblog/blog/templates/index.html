@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container mt-5">
+    {% if request.user.is_authenticated %}
+        <h1 class="text-info">Welcome  {{request.user}}</h1>
+    {% endif %} 
+    {% for posts in posts  %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">{{posts.name}}</h1>
+                <a href="{% url 'postdetail' posts.id %}">
+                <p class="lead">{{posts.desc|truncatechars:150}}</p>
+                </a>
+                <p class="float-lg-right">{{posts.post_by}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock body %}
+

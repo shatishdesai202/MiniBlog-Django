@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container mt-5">
+        <form action="" method="POST" >
+            {% csrf_token %}
+        
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter A Name" required>
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Example textarea</label>
+                <textarea class="form-control" id="desc" name="desc" rows="3" placeholder="Write A Blog" required>
+                </textarea>
+            </div>
+            
+            <input class="btn btn-primary" type="submit" value="Add Post">
+        </form>
+    </div>
+{% endblock body %}

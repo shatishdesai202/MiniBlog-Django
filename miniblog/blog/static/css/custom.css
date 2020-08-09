@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(75, 74, 74);
+}
+
+form{
+    color:silver;
+    background-color: rgb(83 , 81, 81);
+}
+
+.jumbotron{
+    background-color: rgba(80, 70, 2, .4);
+    color:silver
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+ <div class="container mt-5">
+        <form action="" method="POST" >
+            {% csrf_token %}
+            
+                <div class="form-group">
+                        {% for form in form %}
+                <div class="form-group">
+                    {{form.label_tag}}
+                    {{form}}
+                    {% for error in form.errors %}
+                        <div style="width:600px; height:35px;" class="text-danger">
+                            <strong>*{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+                </div>
+            
+            <input class="btn btn-primary" type="submit" value="Add Post">
+        </form>
+    </div>
+{% endblock body %}
